@@ -53,7 +53,7 @@ const HomePage = () => {
                 </div>
                 {language === 'TH' ? (
                     <div>
-                        <h1 className="text-4xl md:text-6xl font-bold mb-2 typing-animation">ชยากร อารีย์</h1>
+                        <h1 className="text-4xl md:text-6xl font-bold mb-2">ชยากร อารีย์</h1>
                         <p className="text-lg md:text-2xl mb-5 w-11/12">
                             รับแก้-พัฒนาระบบหลังบ้าน รับทำเว็บไซต์ทั้งหน้าบ้านและหลังบ้าน และรับออกแบบเว็บไซต์ ราคากันเอง
                         </p>
@@ -83,7 +83,7 @@ const HomePage = () => {
                     </div>
                 ) : (
                     <div>
-                        <h1 className="text-4xl md:text-6xl font-bold mb-2 typing-animation">HI, I'M HARIS WELCOME</h1>
+                        <h1 className="text-4xl md:text-6xl font-bold mb-2 typing-animation">HI, I'M HARIS</h1>
 
                         <style jsx>{`
                             .typing-animation {
@@ -160,7 +160,7 @@ const HomePage = () => {
                     </div>
                 )}
                 {slide === 'tools' && (
-                    <div className="text-white flex flex-wrap justify-center p-40">
+                    <div className="text-white flex flex-wrap justify-center">
                         <img
                                 src="/php.png"
                                 alt="Project"
@@ -189,36 +189,54 @@ const HomePage = () => {
                     </div>
                 )}
                 {slide === 'contact' && (
+                    <div className="bg-gray-800 p-6 rounded-lg shadow-lg max-w-sm mx-auto">
                     <div className="text-white">
-                        {language === 'EN' ? 
+                    {language === 'EN' ? 
                         <div>
-                            <h2 className="text-2xl font-bold">My Contact</h2>
-                            <p>Instagram: _hr1pct</p>
-                            <p>Github: @hrzdev</p>
-                            <p>Email: chayakorn261@gmail.com</p>
-                            <p>Phone: +66 061-840-5251</p>
+                        <h2 className="text-2xl font-bold mb-4">My Contact</h2>
+                        <p className="mb-2">Instagram: <a href='https://www.instagram.com/_hr1pct/' target='_blank' className="text-blue-400 hover:underline">_hr1pct</a></p>
+                        <p className="mb-2">Github: <a href='https://github.com/HRZXD' target='_blank' className="text-blue-400 hover:underline">@hrzdev</a></p>
+                        <p className="mb-2">Email: 
+                            <a href="mailto:chayakorn261@gmail.com" className="text-blue-400 hover:underline"> chayakorn261@gmail.com</a>
+                        </p>
+                        <p>Phone: <span className="text-blue-400">+66 061-840-5251</span></p>
                         </div>
                         : 
                         <div>
-                            <h2 className="text-2xl font-bold">ช่องทางติดต่อ</h2>
-                            <p>Instagram: _hr1pct</p>
-                            <p>Github: @hrzdev</p>
-                            <p>Email: chayakorn261@gmail.com</p>
-                            <p>Phone: +66 061-840-5251</p>
-                        </div> }
+                        <h2 className="text-2xl font-bold mb-4">ช่องทางติดต่อ</h2>
+                        <p className="mb-2">Instagram: <a href='https://www.instagram.com/_hr1pct/' target='_blank' className="text-blue-400 hover:underline">_hr1pct</a></p>
+                        <p className="mb-2">Github: <a href='https://github.com/HRZXD' target='_blank' className="text-blue-400 hover:underline">@hrzdev</a></p>
+                        <p className="mb-2">Email: 
+                            <a href="mailto:chayakorn261@gmail.com" className="text-blue-400 hover:underline"> chayakorn261@gmail.com</a>
+                        </p>
+                        <p>Phone: <span className="text-blue-400">+66 061-840-5251</span></p>
+                        </div>
+                    }
+                    </div>
                     </div>
                 )}
             </div>
             {showModal && (
                 <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-                    <div className="bg-white p-8 rounded-lg shadow-lg max-w-md w-full">
-                        <h2 className="text-2xl font-bold mb-4">Project Details</h2>
-                        <p>Here are the detailed information about the project...</p>
+                    <div className="bg-white p-8 rounded-lg shadow-lg max-w-5xl w-full">
+                        <h2 className="text-2xl font-bold mb-4">{language === 'EN' ? 'Details' : ''}</h2>
+                        {language === 'EN' ?
+                        <p>In this project, my responsibility was to handle the backend development using Node.js and MySQL as the database. As this is my first large-scale project, the website may not be fully secure, but it is functional and performs as expected.</p>
+                        : <p></p> }
+                        {language === 'EN' ?
+                        <p>What've I done?</p>
+                        : <p></p> }
+                        {language === 'EN' ?
+                            <p>System : Login-Register System , Admin System and Booked System</p>
+                        : <p></p> }
+                        {language === 'EN' ?
+                            <p>Duration : 6-8 Months</p>
+                        : <p></p> }
                         <button
                             onClick={handleCloseModal}
                             className="mt-4 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300"
                         >
-                            Close
+                            {language === 'EN' ? 'Close' : ''}
                         </button>
                     </div>
                 </div>
